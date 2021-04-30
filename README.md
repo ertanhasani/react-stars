@@ -72,22 +72,23 @@ render(
 
 This a list of props that you can pass down to the component:
 
-| Property               | Description                                                                                                                               | Default value | type     |
-| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ------------- | -------- |
-| `classNames`            | Name of parent classes                                                                                                                      | `null`        | string   |
-| `count`                | How many total stars you want                                                                                                             | 5             | number   |
-| `value`                | Set rating value                                                                                                                          | 0             | number   |
-| `char`                 | Which character you want to use as a star                                                                                                 | ★             | string   |
-| `color`               | Color of inactive star (this supports any CSS valid value)                                                                                | `gray`        | string   |
-| `activeColor`               | Color of selected or active star                                                                                                          | `#ffd700`     | string   |
-| `size`                 | Size of stars (in px)                                                                                                                     | `15px`        | string   |
-| `edit`                 | Should you be able to select rating or just see rating (for reusability)                                                                  | `true`        | boolean  |
-| `isHalf`                 | Should component use half stars, if not the decimal part will be dropped otherwise normal algebra rools will apply to round to half stars | `true`        | boolean  |
-| `emptyIcon`            | Use your own elements as empty icons                                                                                                      | `null`        | element  |
-| `halfIcon`             | Use your own elements as half filled icons                                                                                                | `null`        | element  |
-| `filledIcon`           | Use your own elements as filled icons                                                                                                     | `null`        | element  |
-| `a11y`                 | Should component be accessible and controlled via keyboard (arrow keys and numbers)                                                       | `true`        | boolean  |
-| `onChange(new_rating)` | Will be invoked any time the rating is changed                                                                                            | `null`        | function |
+| Property                | Description                                                                                                                               | Default value | type     |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ------------- | -------- |
+| `classNames`            | Name of parent classes                                                                                                                    | `null`        | string   |
+| `count`                 | How many total stars you want                                                                                                             | 5             | number   |
+| `value`                 | Set rating value                                                                                                                          | 0             | number   |
+| `char`                  | Which character you want to use as a star                                                                                                 | ★            | string   |
+| `color`                 | Color of inactive star (this supports any CSS valid value)                                                                                | `gray`        | string   |
+| `activeColor`           | Color of selected or active star                                                                                                          | `#ffd700`     | string   |
+| `size`                  | Size of stars (in px)                                                                                                                     | `15px`        | string   |
+| `edit`                  | Should you be able to select rating or just see rating (for reusability)                                                                  | `true`        | boolean  |
+| `isHalf`                | Should component use half stars, if not the decimal part will be dropped otherwise normal algebra rools will apply to round to half stars | `true`        | boolean  |
+| `emptyIcon`             | Use your own elements as empty icons                                                                                                      | `null`        | element  |
+| `halfIcon`              | Use your own elements as half filled icons                                                                                                | `null`        | element  |
+| `filledIcon`            | Use your own elements as filled icons                                                                                                     | `null`        | element  |
+| `a11y`                  | Should component be accessible and controlled via keyboard (arrow keys and numbers)                                                       | `true`        | boolean  |
+| `onChange(new_rating)`  | Will be invoked any time the rating is changed                                                                                            | `null`        | function |
+| `onHover(hover_rating)` | Will be invoked any time the hover value changes                                                                                          | `null`        | function |
 
 ### Help improve the component
 
