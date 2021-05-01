@@ -22,7 +22,7 @@ const secondExample = {
   onChange: newValue => {
     console.log(`Example 2: new value is ${newValue}`);
   },
-  onHover: newValue => {
+  onMouseOver: newValue => {
     console.log(`Example 2: new hover value is ${newValue}`)
   }
 };
@@ -37,7 +37,7 @@ const thirdExample = {
   onChange: newValue => {
     console.log(`Example 3: new value is ${newValue}`);
   },
-  onHover: newValue => {
+  onMouseOver: newValue => {
     console.log(`Example 3: new hover value is ${newValue}`)
   }
 };
@@ -50,8 +50,11 @@ const fourthExample = {
   onChange: newValue => {
     console.log(`Example 4: new value is ${newValue}`);
   },
-  onHover: newValue => {
+  onMouseOver: newValue => {
     console.log(`Example 4: new hover value is ${newValue}`)
+  },
+  onMouseLeave: val => {
+    console.log(val);
   }
 };
 

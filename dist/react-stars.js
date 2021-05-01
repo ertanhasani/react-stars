@@ -181,6 +181,8 @@ function ReactStars(props) {
 
         updateHalfStarValues(currentValue);
         setStars(getStars());
+
+        props.onMouseLeave(currentValue);
     }
 
     function updateHalfStarValues(value) {
@@ -225,7 +227,7 @@ function ReactStars(props) {
     function hoverValueUpdated(value) {
         if (value !== hoverValue) {
             setHoverValue(value);
-            props.onHover(value);
+            props.onMouseOver(value);
         }
     }
 
@@ -325,7 +327,8 @@ ReactStars.defaultProps = {
     a11y: true,
 
     onChange: function onChange() {},
-    onHover: function onHover() {}
+    onMouseOver: function onMouseOver() {},
+    onMouseLeave: function onMouseLeave() {}
 };
 
 exports.default = ReactStars;
