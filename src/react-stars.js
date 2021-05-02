@@ -38,6 +38,7 @@ function ReactStars(props) {
     const [halfStarAt, setHalfStarAt] = useState(0);
     const [halfStarHidden, setHalfStarHidden] = useState(false);
     const [classNames, setClassNames] = useState('');
+    const [hoverValue, setHoverValue] = useState(0);
 
     function iconsUsed(config) {
         return (
@@ -103,18 +104,21 @@ function ReactStars(props) {
         if (!config.edit) return;
 
         let index = Number(event.currentTarget.getAttribute('data-index'));
-
+        let value;
         if (config.isHalf) {
             const isAtHalf = moreThanHalf(event);
             setHalfStarHidden(isAtHalf);
             if (isAtHalf) index += 1;
+            value = isAtHalf ? index : index + 0.5;
             setHalfStarAt(index);
         }
         else {
+            value = index + 1;
             index += 1;
         }
 
         updateStars(index);
+        hoverValueUpdated(value);
     }
 
     function updateStars(index) {
@@ -138,6 +142,8 @@ function ReactStars(props) {
 
         updateHalfStarValues(currentValue);
         setStars(getStars());
+
+        props.onMouseLeave(currentValue);
     }
 
     function updateHalfStarValues(value) {
@@ -180,6 +186,13 @@ function ReactStars(props) {
             setStars(getStars(value));
             setCurrentValue(value);
             props.onChange(value);
+        }
+    }
+
+    function hoverValueUpdated(value) {
+        if (value !== hoverValue) {
+            setHoverValue(value);
+            props.onMouseOver(value);
         }
     }
 
@@ -275,7 +288,9 @@ ReactStars.defaultProps = {
     activeColor: '#ffd700',
     a11y: true,
 
-    onChange: () => { }
+    onChange: () => { },
+    onMouseOver: () => { },
+    onMouseLeave: () => { }
 };
 
 export default ReactStars;

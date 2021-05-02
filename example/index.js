@@ -21,6 +21,9 @@ const secondExample = {
   filledIcon: <i className="fa fa-star" />,
   onChange: newValue => {
     console.log(`Example 2: new value is ${newValue}`);
+  },
+  onMouseOver: newValue => {
+    console.log(`Example 2: new hover value is ${newValue}`)
   }
 };
 
@@ -33,6 +36,9 @@ const thirdExample = {
   activeColor: "red",
   onChange: newValue => {
     console.log(`Example 3: new value is ${newValue}`);
+  },
+  onMouseOver: newValue => {
+    console.log(`Example 3: new hover value is ${newValue}`)
   }
 };
 
@@ -43,6 +49,12 @@ const fourthExample = {
   value: 3.5,
   onChange: newValue => {
     console.log(`Example 4: new value is ${newValue}`);
+  },
+  onMouseOver: newValue => {
+    console.log(`Example 4: new hover value is ${newValue}`)
+  },
+  onMouseLeave: val => {
+    console.log(val);
   }
 };
 

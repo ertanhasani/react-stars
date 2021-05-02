@@ -78,6 +78,11 @@ function ReactStars(props) {
         classNames = _useState14[0],
         setClassNames = _useState14[1];
 
+    var _useState15 = (0, _react.useState)(0),
+        _useState16 = _slicedToArray(_useState15, 2),
+        hoverValue = _useState16[0],
+        setHoverValue = _useState16[1];
+
     function iconsUsed(config) {
         return !config.isHalf && config.emptyIcon && config.filledIcon || config.isHalf && config.emptyIcon && config.halfIcon && config.filledIcon;
     }
@@ -136,17 +141,20 @@ function ReactStars(props) {
         if (!config.edit) return;
 
         var index = Number(event.currentTarget.getAttribute('data-index'));
-
+        var value = void 0;
         if (config.isHalf) {
             var isAtHalf = moreThanHalf(event);
             setHalfStarHidden(isAtHalf);
             if (isAtHalf) index += 1;
+            value = isAtHalf ? index : index + 0.5;
             setHalfStarAt(index);
         } else {
+            value = index + 1;
             index += 1;
         }
 
         updateStars(index);
+        hoverValueUpdated(value);
     }
 
     function updateStars(index) {
@@ -173,6 +181,8 @@ function ReactStars(props) {
 
         updateHalfStarValues(currentValue);
         setStars(getStars());
+
+        props.onMouseLeave(currentValue);
     }
 
     function updateHalfStarValues(value) {
@@ -211,6 +221,13 @@ function ReactStars(props) {
             setStars(getStars(value));
             setCurrentValue(value);
             props.onChange(value);
+        }
+    }
+
+    function hoverValueUpdated(value) {
+        if (value !== hoverValue) {
+            setHoverValue(value);
+            props.onMouseOver(value);
         }
     }
 
@@ -309,7 +326,9 @@ ReactStars.defaultProps = {
     activeColor: '#ffd700',
     a11y: true,
 
-    onChange: function onChange() {}
+    onChange: function onChange() {},
+    onMouseOver: function onMouseOver() {},
+    onMouseLeave: function onMouseLeave() {}
 };
 
 exports.default = ReactStars;
