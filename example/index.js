@@ -19,6 +19,9 @@ const secondExample = {
   emptyIcon: <i className="far fa-fw fa-star" />,
   halfIcon: <i className="fa fa-fw fa-star-half-alt" />,
   filledIcon: <i className="fa fa-fw fa-star" />,
+  onClick: value => {
+    console.log(`Example 2: onClick value is ${value}`)
+  },
   onChange: newValue => {
     console.log(`Example 2: new value is ${newValue}`);
   }
@@ -31,6 +34,9 @@ const thirdExample = {
   value: 4,
   color: "blue",
   activeColor: "red",
+  onClick: value => {
+    console.log(`Example 3: onClick value is ${value}`)
+  },
   onChange: newValue => {
     console.log(`Example 3: new value is ${newValue}`);
   }
@@ -41,6 +47,9 @@ const fourthExample = {
   isHalf: true,
   char: "",
   value: 3.5,
+  onClick: value => {
+    console.log(`Example 4: onClick value is ${value}`)
+  },
   onChange: newValue => {
     console.log(`Example 4: new value is ${newValue}`);
   }
